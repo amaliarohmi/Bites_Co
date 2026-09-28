@@ -3,59 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bites.Co — Lumpia Pisang Bites 🍌</title>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<title>Lumpian Mini Bites - Renyah, Manis, Bikin Nagih! 🍌</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --beige: #F5E6D3;
-    --peach: #FAD4B8;
-    --peach-light: #FCE4D0;
-    --cream: #FFF9F0;
-    --brown: #6B4226;
-    --deep-brown: #3E2411;
-    --choco: #4A2C17;
-    --golden: #D89B4A;
-    --golden-light: #F0B94E;
-    --green: #7A9B76;
-    --green-dark: #4F6B4C;
-    --soft-shadow: rgba(107, 66, 38, 0.15);
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
   }
 
-  html { scroll-behavior: smooth; }
+  :root {
+    --warm-yellow: #FFD93D;
+    --cream: #FFF8E7;
+    --orange: #FF9A3C;
+    --deep-orange: #FF6B35;
+    --brown: #8B4513;
+    --choco: #5D3A1A;
+    --soft-pink: #FFB5A7;
+  }
 
   body {
-    font-family: 'Poppins', sans-serif;
     background: var(--cream);
-    color: var(--deep-brown);
+    color: var(--choco);
     overflow-x: hidden;
-    line-height: 1.6;
   }
 
   /* ===== NAVBAR ===== */
   nav {
     position: fixed;
-    top: 0; width: 100%;
-    padding: 14px 6%;
+    top: 0;
+    width: 100%;
+    padding: 18px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 249, 240, 0.88);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 248, 231, 0.95);
+    backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(216, 155, 74, 0.12);
+    box-shadow: 0 4px 20px rgba(255, 154, 60, 0.1);
   }
 
   .logo {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--brown);
-    letter-spacing: 0.5px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--deep-orange);
+    letter-spacing: -0.5px;
   }
-  .logo .dot { color: var(--golden); }
+
+  .logo span { color: var(--warm-yellow); }
 
   .nav-links {
     display: flex;
@@ -65,867 +60,964 @@
 
   .nav-links a {
     text-decoration: none;
-    color: var(--brown);
+    color: var(--choco);
     font-weight: 500;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     transition: color 0.3s;
     position: relative;
   }
-  .nav-links a:hover { color: var(--golden); }
+
+  .nav-links a:hover { color: var(--deep-orange); }
 
   .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px; left: 0;
-    width: 0; height: 2px;
-    background: var(--golden);
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 10px;
     transition: width 0.3s;
-    border-radius: 5px;
   }
+
   .nav-links a:hover::after { width: 100%; }
 
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .icon-btn {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--brown);
-    transition: all 0.3s;
-    box-shadow: 0 4px 12px var(--soft-shadow);
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .icon-btn:hover {
-    transform: translateY(-3px);
-    background: var(--golden);
+  .btn-nav {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, var(--orange), var(--deep-orange));
     color: white;
-    box-shadow: 0 8px 20px rgba(216, 155, 74, 0.35);
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 18px rgba(255, 107, 53, 0.3);
   }
 
-  .icon-btn svg {
-    width: 18px; height: 18px;
-    fill: currentColor;
+  .btn-nav:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
   }
 
-  .icon-btn.wa { background: #25D366; color: white; }
-  .icon-btn.wa:hover { background: #1da851; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); }
-
-  .icon-btn.ig { background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCAF45); color: white; }
-  .icon-btn.tt { background: #000; color: white; }
-
-  /* ===== HERO ===== */
+  /* ===== HERO SECTION ===== */
   .hero {
-    position: relative;
     min-height: 100vh;
-    padding: 120px 6% 60px;
-    background:
-      radial-gradient(ellipse at 80% 20%, rgba(250, 212, 184, 0.6) 0%, transparent 55%),
-      radial-gradient(ellipse at 20% 80%, rgba(245, 230, 211, 0.9) 0%, transparent 55%),
-      linear-gradient(180deg, var(--beige) 0%, var(--cream) 100%);
-    overflow: hidden;
+    padding: 130px 6% 60px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 40px;
-  }
-
-  /* Tanaman hijau blur di kiri */
-  .leaf-blur {
-    position: absolute;
-    left: -10%; top: 10%;
-    width: 420px; height: 420px;
-    background: radial-gradient(circle, var(--green) 0%, var(--green-dark) 60%, transparent 78%);
-    border-radius: 50%;
-    filter: blur(85px);
-    opacity: 0.38;
-    z-index: 0;
-  }
-  .leaf-blur-2 {
-    position: absolute;
-    left: 3%; bottom: 3%;
-    width: 280px; height: 280px;
-    background: radial-gradient(circle, var(--green) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(75px);
-    opacity: 0.28;
-    z-index: 0;
-  }
-
-  /* Daun dekoratif realistis */
-  .leaf-shape {
-    position: absolute;
-    left: -20px; top: 25%;
-    width: 200px; height: 90px;
-    background: linear-gradient(135deg, var(--green-dark), var(--green));
-    border-radius: 0 100% 0 100%;
-    filter: blur(6px);
-    opacity: 0.55;
-    transform: rotate(-25deg);
-    z-index: 1;
-  }
-  .leaf-shape-2 {
-    position: absolute;
-    left: 40px; top: 55%;
-    width: 160px; height: 70px;
-    background: linear-gradient(135deg, var(--green), var(--green-dark));
-    border-radius: 100% 0 100% 0;
-    filter: blur(8px);
-    opacity: 0.4;
-    transform: rotate(15deg);
-    z-index: 1;
-  }
-
-  /* Bokeh */
-  .bokeh {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    filter: blur(4px);
-    animation: floatBokeh 6s ease-in-out infinite;
-  }
-  .bokeh-1 { top: 18%; left: 30%; width: 10px; height: 10px; }
-  .bokeh-2 { top: 62%; left: 12%; width: 6px; height: 6px; animation-delay: 1.5s; }
-  .bokeh-3 { top: 38%; left: 48%; width: 14px; height: 14px; animation-delay: 3s; }
-  .bokeh-4 { top: 78%; left: 42%; width: 8px; height: 8px; animation-delay: 2s; }
-  .bokeh-5 { top: 12%; left: 58%; width: 7px; height: 7px; animation-delay: 4s; }
-  .bokeh-6 { top: 50%; left: 25%; width: 12px; height: 12px; animation-delay: 0.5s; }
-
-  @keyframes floatBokeh {
-    0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
-    50% { transform: translateY(-25px) scale(1.25); opacity: 0.85; }
-  }
-
-  /* ===== HERO VISUAL (FOTO PRODUK REALISTIS) ===== */
-  .hero-visual {
+    gap: 60px;
     position: relative;
-    z-index: 2;
-    height: 640px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Tulisan handwritten "Bites.Co" di atas tengah */
-  .handwritten-brand {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-2deg);
-    font-family: 'Caveat', cursive;
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1;
-    text-shadow:
-      0 2px 4px rgba(107, 66, 38, 0.4),
-      0 4px 12px rgba(62, 36, 17, 0.35),
-      0 0 30px rgba(255, 255, 255, 0.4);
-    z-index: 10;
-    pointer-events: none;
-    white-space: nowrap;
-    letter-spacing: 1px;
-  }
-
-  .handwritten-brand .dot-co {
-    color: #FFFFFF;
-    font-size: 1.05em;
-  }
-
-  /* Foto produk utama */
-  .photo-frame {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1400px;
-  }
-
-  /* ===== CUP PRODUK FOREGROUND (kiri bawah) ===== */
-  .product-cup {
-    position: absolute;
-    bottom: 8%;
-    left: 2%;
-    width: 240px;
-    transform: rotate(-8deg);
-    z-index: 4;
-    animation: floatCup1 5.5s ease-in-out infinite;
-    filter: drop-shadow(0 30px 40px rgba(107, 66, 38, 0.4));
-  }
-
-  /* ===== CUP PRODUK BACKGROUND (kanan atas) ===== */
-  .product-cup-2 {
-    position: absolute;
-    top: 12%;
-    right: 2%;
-    width: 210px;
-    transform: rotate(7deg);
-    z-index: 3;
-    animation: floatCup2 6.5s ease-in-out infinite;
-    filter: drop-shadow(0 25px 35px rgba(107, 66, 38, 0.35));
-  }
-
-  @keyframes floatCup1 {
-    0%, 100% { transform: rotate(-8deg) translateY(0); }
-    50% { transform: rotate(-6deg) translateY(-14px); }
-  }
-  @keyframes floatCup2 {
-    0%, 100% { transform: rotate(7deg) translateY(0); }
-    50% { transform: rotate(5deg) translateY(-12px); }
-  }
-
-  /* Cup plastik transparan */
-  .plastic-cup {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1.1;
-    background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.45) 0%,
-      rgba(255, 255, 255, 0.2) 40%,
-      rgba(250, 212, 184, 0.3) 100%);
-    border-radius: 12px 12px 20px 20px;
-    border: 2px solid rgba(255, 255, 255, 0.85);
-    box-shadow:
-      inset 0 0 35px rgba(255, 255, 255, 0.55),
-      inset -10px 0 22px rgba(255, 255, 255, 0.45),
-      inset 10px 0 22px rgba(250, 212, 184, 0.3),
-      0 18px 35px rgba(107, 66, 38, 0.28);
-    overflow: hidden;
-    backdrop-filter: blur(2px);
-  }
-
-  /* Tutup bening */
-  .plastic-cup::before {
-    content: '';
-    position: absolute;
-    top: -3px; left: 50%;
-    transform: translateX(-50%);
-    width: 105%; height: 24px;
-    background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.65) 100%);
-    border-radius: 10px 10px 6px 6px;
-    border: 2px solid rgba(255, 255, 255, 0.95);
-    box-shadow:
-      inset 0 -3px 6px rgba(0, 0, 0, 0.06),
-      0 5px 12px rgba(107, 66, 38, 0.18);
-    z-index: 5;
-  }
-
-  /* Highlight tutup */
-  .plastic-cup::after {
-    content: '';
-    position: absolute;
-    top: 5px; left: 15%;
-    width: 42%; height: 8px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    filter: blur(2px);
-    z-index: 6;
-  }
-
-  /* Isi cup - lumpia bites */
-  .cup-fill {
-    position: absolute;
-    top: 20px; left: 0;
-    width: 100%; height: calc(100% - 20px);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 2px;
-    padding: 8px 6px;
-    z-index: 1;
-  }
-
-  /* Lumpia bite - golden brown crispy */
-  .bite {
-    width: 28px;
-    height: 22px;
-    background: linear-gradient(135deg,
-      #F5C663 0%,
-      #E0A545 30%,
-      #C8873A 60%,
-      #A86A28 100%);
-    border-radius: 6px 5px 6px 5px;
-    position: relative;
-    box-shadow:
-      inset -2px -2px 4px rgba(107, 66, 38, 0.55),
-      inset 2px 2px 3px rgba(255, 240, 200, 0.75),
-      0 3px 5px rgba(62, 36, 17, 0.35);
-    transform: rotate(var(--r, 0deg));
-    flex-shrink: 0;
-  }
-
-  /* Tekstur crispy */
-  .bite::before {
-    content: '';
-    position: absolute;
-    top: 3px; left: 3px;
-    width: 22px; height: 1.5px;
-    background: rgba(139, 69, 19, 0.45);
-    border-radius: 3px;
-    box-shadow:
-      0 4px 0 rgba(139, 69, 19, 0.4),
-      0 8px 0 rgba(139, 69, 19, 0.32),
-      0 12px 0 rgba(139, 69, 19, 0.25),
-      2px 16px 0 rgba(139, 69, 19, 0.2);
-    transform: rotate(-4deg);
-  }
-
-  /* Pisang terlihat di dalam */
-  .bite::after {
-    content: '';
-    position: absolute;
-    top: 7px; right: 5px;
-    width: 8px; height: 6px;
-    background: radial-gradient(ellipse,
-      #FAF0B8 0%,
-      #EFD680 50%,
-      #D9B95A 100%);
-    border-radius: 50% 40% 50% 40%;
-    box-shadow: inset -1px -1px 1.5px rgba(139, 69, 19, 0.4);
-  }
-
-  /* Cup saus coklat */
-  .sauce-cup {
-    position: absolute;
-    bottom: -22px;
-    right: -18px;
-    width: 72px;
-    height: 62px;
-    background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.92) 0%,
-      rgba(250, 240, 230, 0.88) 100%);
-    border-radius: 10px 10px 45% 45% / 10px 10px 55% 55%;
-    border: 2px solid rgba(255, 255, 255, 0.95);
-    box-shadow:
-      inset 0 -6px 15px rgba(0, 0, 0, 0.06),
-      0 10px 20px rgba(107, 66, 38, 0.32);
-    z-index: 7;
-    overflow: hidden;
-    animation: floatCup1 4.5s ease-in-out infinite;
-  }
-
-  /* Saus coklat di dalam cup */
-  .sauce-cup::before {
-    content: '';
-    position: absolute;
-    top: 16px; left: 9px;
-    width: 46px; height: 36px;
-    background: radial-gradient(ellipse at 35% 30%,
-      #7B4A28 0%,
-      #5D3A1A 45%,
-      #3E2411 100%);
-    border-radius: 50%;
-    box-shadow:
-      inset -5px -5px 9px rgba(0, 0, 0, 0.55),
-      inset 5px 5px 9px rgba(139, 90, 43, 0.6);
-  }
-
-  /* Highlight saus */
-  .sauce-cup::after {
-    content: '';
-    position: absolute;
-    top: 22px; left: 17px;
-    width: 14px; height: 6px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    filter: blur(2px);
-    z-index: 2;
-  }
-
-  /* ===== TANGAN MEMEGANG CUP ===== */
-  .hand {
-    position: absolute;
-    width: 100px;
-    height: 130px;
-    background: linear-gradient(135deg,
-      #EBC0A0 0%,
-      #D9A87F 45%,
-      #C69068 100%);
-    border-radius: 45% 45% 35% 35% / 50% 50% 42% 42%;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    box-shadow:
-      inset -6px -6px 16px rgba(139, 90, 60, 0.35),
-      inset 6px 6px 16px rgba(255, 225, 195, 0.55),
-      0 12px 24px rgba(107, 66, 38, 0.22);
-  }
-
-  /* Ruas jari */
-  .hand::before {
-    content: '';
-    position: absolute;
-    top: -16px; left: 18px;
-    width: 34px; height: 44px;
-    background: linear-gradient(135deg, #EBC0A0, #D9A87F);
-    border-radius: 50% 50% 32% 32%;
-    box-shadow: inset -3px -3px 6px rgba(139, 90, 60, 0.32);
-  }
-
-  /* Jempol */
-  .hand::after {
-    content: '';
-    position: absolute;
-    top: 8px; right: 4px;
-    width: 38px; height: 60px;
-    background: linear-gradient(135deg, #EBC0A0, #D9A87F);
-    border-radius: 45% 45% 50% 50%;
-    transform: rotate(-22deg);
-    box-shadow:
-      inset -4px -4px 9px rgba(139, 90, 60, 0.38),
-      inset 4px 4px 7px rgba(255, 225, 195, 0.55);
-  }
-
-  /* Kuku */
-  .nail {
-    position: absolute;
-    top: -10px; right: 10px;
-    width: 15px; height: 11px;
-    background: linear-gradient(135deg, #FAE7D8, #EFC8A8);
-    border-radius: 50%;
-    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.9);
-    z-index: 3;
-  }
-
-  /* Bayangan tangan */
-  .hand-shadow {
-    position: absolute;
-    bottom: -70px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 30px;
-    background: radial-gradient(ellipse, rgba(107, 66, 38, 0.4) 0%, transparent 72%);
-    filter: blur(10px);
-    z-index: 0;
-  }
-
-  /* ===== HERO TEXT ===== */
-  .hero-text {
-    position: relative;
-    z-index: 5;
-    max-width: 560px;
-    padding-right: 20px;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 18px;
-    background: white;
-    border-radius: 50px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--brown);
-    box-shadow: 0 6px 18px var(--soft-shadow);
-    margin-bottom: 20px;
-  }
-
-  .hero-badge .dot-live {
-    width: 8px; height: 8px;
-    background: #25D366;
-    border-radius: 50%;
-    animation: pulse 1.5s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.3); }
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(255, 217, 61, 0.35) 0%, transparent 45%),
+      radial-gradient(circle at 90% 80%, rgba(255, 154, 60, 0.3) 0%, transparent 45%),
+      var(--cream);
   }
 
   .hero-text h1 {
-    font-size: clamp(2rem, 4.2vw, 3.1rem);
-    font-weight: 800;
-    line-height: 1.15;
-    color: var(--deep-brown);
-    margin-bottom: 18px;
-    letter-spacing: -1px;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--deep-orange);
+    margin-bottom: 20px;
+    letter-spacing: -1.5px;
   }
 
-  .hero-text h1 .accent {
-    color: var(--golden);
-    font-family: 'Caveat', cursive;
-    font-weight: 700;
-    font-size: 1.15em;
+  .hero-text h1 .highlight {
+    background: linear-gradient(135deg, var(--warm-yellow), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    position: relative;
   }
 
-  .hero-text p {
-    font-size: 1rem;
+  .hero-text h1 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--warm-yellow), var(--orange));
+    border-radius: 10px;
+    opacity: 0.5;
+  }
+
+  .hero-text .tagline {
+    font-size: 1.15rem;
     color: var(--brown);
     margin-bottom: 30px;
-    max-width: 480px;
-    opacity: 0.9;
+    line-height: 1.7;
+    max-width: 500px;
   }
+
+  .hero-text .tagline strong { color: var(--deep-orange); }
 
   .hero-buttons {
     display: flex;
-    gap: 14px;
+    gap: 15px;
     flex-wrap: wrap;
     margin-bottom: 35px;
   }
 
   .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 32px;
-    background: var(--brown);
+    padding: 16px 34px;
+    background: linear-gradient(135deg, var(--orange), var(--deep-orange));
     color: white;
     border: none;
     border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 10px 25px rgba(107, 66, 38, 0.3);
-    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .btn-primary:hover {
-    transform: translateY(-4px);
-    background: var(--deep-brown);
-    box-shadow: 0 15px 35px rgba(107, 66, 38, 0.4);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.5);
   }
-
-  .btn-primary svg { width: 18px; height: 18px; fill: currentColor; }
 
   .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 15px 30px;
+    padding: 16px 34px;
     background: white;
-    color: var(--brown);
-    border: 2px solid var(--brown);
+    color: var(--deep-orange);
+    border: 2px solid var(--orange);
     border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s;
-    text-decoration: none;
   }
 
-  .btn-secondary:hover { background: var(--peach); transform: translateY(-4px); }
+  .btn-secondary:hover {
+    background: var(--warm-yellow);
+    border-color: var(--warm-yellow);
+    transform: translateY(-4px);
+  }
 
-  .hero-trust {
+  .hero-stats {
     display: flex;
-    gap: 35px;
-    padding-top: 25px;
-    border-top: 1px solid rgba(107, 66, 38, 0.12);
+    gap: 40px;
+    margin-top: 20px;
   }
 
-  .trust-item h3 {
-    font-size: 1.5rem;
+  .stat h3 {
+    font-size: 1.8rem;
+    color: var(--deep-orange);
     font-weight: 800;
-    color: var(--brown);
-    line-height: 1;
-  }
-  .trust-item h3 span { color: var(--golden); }
-
-  .trust-item p {
-    font-size: 0.78rem;
-    color: var(--brown);
-    opacity: 0.7;
-    margin-top: 5px;
-    margin-bottom: 0;
   }
 
-  /* ===== SECTION ===== */
-  section { padding: 90px 6%; position: relative; }
+  .stat p {
+    font-size: 0.85rem;
+    color: var(--brown);
+    opacity: 0.8;
+  }
 
-  .section-header {
+  /* ===== HERO IMAGE (Food Photography Style) ===== */
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .jar-container {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1;
+    background: linear-gradient(145deg, #FFFDF5, #FFEFC9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 
+      0 30px 60px rgba(255, 154, 60, 0.25),
+      inset 0 -20px 40px rgba(255, 217, 61, 0.2);
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .jar-container::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border: 3px dashed var(--warm-yellow);
+    animation: rotate 25s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Toples mini estetik */
+  .jar {
+    position: relative;
+    width: 62%;
+    height: 70%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255, 248, 231, 0.7));
+    border: 3px solid rgba(255, 154, 60, 0.4);
+    border-radius: 25px 25px 30px 30px;
+    box-shadow: 
+      inset 0 0 30px rgba(255, 217, 61, 0.3),
+      0 20px 40px rgba(139, 69, 19, 0.15);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+  }
+
+  .jar-lid {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 108%;
+    height: 30px;
+    background: linear-gradient(180deg, var(--orange), var(--deep-orange));
+    border-radius: 15px 15px 8px 8px;
+    box-shadow: 0 6px 15px rgba(255, 107, 53, 0.4);
+  }
+
+  .jar-lid::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 3px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+  }
+
+  /* Lumpia mini di dalam toples */
+  .lumpia-stack {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-end;
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .lumpia {
+    width: 42px;
+    height: 16px;
+    background: linear-gradient(135deg, #E8A33D, #C87F2E, #F0B94E);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 
+      inset -2px -2px 4px rgba(139, 69, 19, 0.4),
+      inset 2px 2px 3px rgba(255, 220, 150, 0.6),
+      0 3px 6px rgba(139, 69, 19, 0.25);
+    transform: rotate(var(--rot, 0deg));
+  }
+
+  .lumpia::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 12px;
+    height: 3px;
+    background: rgba(255, 240, 200, 0.7);
+    border-radius: 3px;
+    transform: rotate(-15deg);
+  }
+
+  .lumpia::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 6px;
+    width: 8px;
+    height: 2px;
+    background: rgba(139, 69, 19, 0.5);
+    border-radius: 3px;
+  }
+
+  /* Saus coklat glas */
+  .sauce-bowl {
+    position: absolute;
+    bottom: 8%;
+    right: -8%;
+    width: 90px;
+    height: 70px;
+    background: linear-gradient(180deg, #FFFFFF, #F5E6D3);
+    border-radius: 15px 15px 45px 45px;
+    box-shadow: 
+      0 12px 25px rgba(139, 69, 19, 0.3),
+      inset 0 -8px 15px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  .choco-sauce {
+    width: 70px;
+    height: 40px;
+    background: radial-gradient(ellipse at 30% 30%, #6B4226, #3E2411);
+    border-radius: 50%;
+    margin-top: 15px;
+    box-shadow: 
+      inset -5px -5px 10px rgba(0,0,0,0.4),
+      inset 5px 5px 10px rgba(139, 90, 43, 0.5);
+    position: relative;
+  }
+
+  .choco-sauce::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    width: 15px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    filter: blur(2px);
+  }
+
+  /* Badge floating */
+  .badge-float {
+    position: absolute;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 154, 60, 0.25);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--deep-orange);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: float 3.5s ease-in-out infinite;
+  }
+
+  .badge-1 { top: 10%; left: -5%; animation-delay: 0.3s; }
+  .badge-2 { bottom: 15%; left: -8%; animation-delay: 0.8s; }
+  .badge-3 { top: 20%; right: -5%; animation-delay: 1.2s; }
+
+  /* ===== SECTION UMUM ===== */
+  section { padding: 90px 6%; }
+
+  .section-title {
     text-align: center;
     margin-bottom: 60px;
-    max-width: 700px;
+  }
+
+  .section-title .label {
+    display: inline-block;
+    background: var(--warm-yellow);
+    color: var(--brown);
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .section-title h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--deep-orange);
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+
+  .section-title p {
+    color: var(--brown);
+    margin-top: 12px;
+    font-size: 1.05rem;
+    opacity: 0.85;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .section-label {
-    display: inline-block;
-    padding: 6px 18px;
-    background: var(--peach-light);
-    color: var(--brown);
-    border-radius: 50px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-  }
-
-  .section-header h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-    color: var(--deep-brown);
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    margin-bottom: 12px;
-  }
-
-  .section-header h2 .hand-accent {
-    font-family: 'Caveat', cursive;
-    color: var(--golden);
-    font-weight: 700;
-    font-size: 1.2em;
-  }
-
-  .section-header p {
-    color: var(--brown);
-    opacity: 0.82;
-    font-size: 1rem;
   }
 
   /* ===== KEUNGGULAN ===== */
   .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
   }
 
   .feature-card {
     background: white;
     padding: 35px 28px;
-    border-radius: 24px;
+    border-radius: 25px;
     text-align: center;
     transition: all 0.4s;
-    box-shadow: 0 8px 25px var(--soft-shadow);
-    border: 1px solid rgba(216, 155, 74, 0.1);
+    border: 2px solid transparent;
+    box-shadow: 0 10px 30px rgba(255, 154, 60, 0.08);
   }
 
   .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(107, 66, 38, 0.2);
-    border-color: var(--peach);
+    border-color: var(--warm-yellow);
+    box-shadow: 0 20px 40px rgba(255, 154, 60, 0.2);
   }
 
   .feature-icon {
-    width: 70px; height: 70px;
+    width: 75px;
+    height: 75px;
     margin: 0 auto 20px;
-    background: linear-gradient(135deg, var(--peach), var(--golden-light));
-    border-radius: 20px;
+    background: linear-gradient(135deg, var(--warm-yellow), var(--orange));
+    border-radius: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    box-shadow: 0 10px 20px rgba(255, 154, 60, 0.3);
     transition: transform 0.4s;
-    box-shadow: 0 8px 20px rgba(216, 155, 74, 0.25);
   }
 
   .feature-card:hover .feature-icon {
-    transform: rotate(-8deg) scale(1.08);
+    transform: rotate(-8deg) scale(1.1);
   }
 
   .feature-card h3 {
-    color: var(--deep-brown);
-    font-size: 1.15rem;
+    color: var(--deep-orange);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
     font-weight: 700;
-    margin-bottom: 10px;
   }
 
   .feature-card p {
     color: var(--brown);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     opacity: 0.85;
   }
 
-  /* ===== MENU ===== */
-  .menu-section { background: linear-gradient(180deg, var(--cream), var(--beige)); }
+  /* ===== MENU/PRODUK ===== */
+  .menu-section { background: linear-gradient(180deg, var(--cream), #FFF5DC); }
 
   .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 35px;
   }
 
   .menu-card {
     background: white;
-    border-radius: 26px;
-    padding: 22px;
+    border-radius: 28px;
+    padding: 25px;
     transition: all 0.4s;
-    box-shadow: 0 10px 30px var(--soft-shadow);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 154, 60, 0.1);
   }
 
   .menu-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(107, 66, 38, 0.2);
+    box-shadow: 0 25px 50px rgba(255, 154, 60, 0.25);
   }
 
   .menu-visual {
     width: 100%;
     height: 200px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, var(--beige), var(--peach-light));
+    border-radius: 20px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    position: relative;
     overflow: hidden;
+    margin-bottom: 20px;
   }
 
-  .mini-cup {
-    width: 80px; height: 95px;
-    background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.6) 0%,
-      rgba(255, 255, 255, 0.3) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.9);
-    border-radius: 8px 8px 12px 12px;
+  .menu-visual.yellow-bg { background: linear-gradient(135deg, #FFF3C4, #FFE07A); }
+  .menu-visual.orange-bg { background: linear-gradient(135deg, #FFDCB5, #FFB870); }
+  .menu-visual.pink-bg { background: linear-gradient(135deg, #FFD6CC, #FFB5A7); }
+
+  .menu-visual .jar-mini {
+    width: 90px;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid rgba(255, 154, 60, 0.5);
+    border-radius: 12px 12px 15px 15px;
     position: relative;
-    box-shadow:
-      inset 0 0 15px rgba(255, 255, 255, 0.6),
-      0 10px 20px rgba(107, 66, 38, 0.2);
+    box-shadow: inset 0 0 15px rgba(255, 217, 61, 0.4);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: flex-start;
+    align-content: flex-end;
     gap: 2px;
-    padding: 6px 4px;
-    overflow: hidden;
+    padding: 5px;
   }
 
-  .mini-cup::before {
+  .menu-visual .jar-mini::before {
     content: '';
     position: absolute;
-    top: -2px; left: -2%;
-    width: 104%; height: 12px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 6px 6px 3px 3px;
-    border: 1.5px solid rgba(255, 255, 255, 0.95);
-    z-index: 2;
+    top: -8px;
+    left: -4%;
+    width: 108%;
+    height: 14px;
+    background: linear-gradient(180deg, var(--orange), var(--deep-orange));
+    border-radius: 8px 8px 4px 4px;
   }
 
-  .mini-bite {
-    width: 16px; height: 12px;
-    background: linear-gradient(135deg, #F0B94E, #B87830);
-    border-radius: 3px;
-    box-shadow: inset -1px -1px 2px rgba(107, 66, 38, 0.4);
-    position: relative;
-  }
-
-  .mini-bite::after {
-    content: '';
-    position: absolute;
-    top: 3px; right: 2px;
-    width: 4px; height: 3px;
-    background: #F5E6A8;
-    border-radius: 50%;
+  .mini-lumpia {
+    width: 22px;
+    height: 9px;
+    background: linear-gradient(135deg, #E8A33D, #C87F2E);
+    border-radius: 5px;
+    box-shadow: inset -1px -1px 2px rgba(139, 69, 19, 0.4);
   }
 
   .menu-card h3 {
-    color: var(--deep-brown);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 6px;
+    color: var(--deep-orange);
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 8px;
   }
 
   .menu-card .desc {
     color: var(--brown);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     line-height: 1.6;
     opacity: 0.8;
-    margin-bottom: 16px;
-    min-height: 42px;
+    margin-bottom: 18px;
+    min-height: 45px;
   }
 
   .menu-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 14px;
-    border-top: 1px dashed rgba(216, 155, 74, 0.3);
+    padding-top: 15px;
+    border-top: 2px dashed rgba(255, 154, 60, 0.25);
   }
 
   .price {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--brown);
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--deep-orange);
   }
+
   .price small {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--brown);
     opacity: 0.7;
   }
 
   .btn-order {
-    padding: 8px 18px;
-    background: var(--brown);
-    color: white;
+    padding: 10px 20px;
+    background: var(--warm-yellow);
+    color: var(--brown);
     border: none;
     border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.3s;
   }
-  .btn-order:hover { background: var(--golden); transform: scale(1.05); }
+
+  .btn-order:hover {
+    background: var(--orange);
+    color: white;
+    transform: scale(1.05);
+  }
 
   .badge-hot {
     position: absolute;
-    top: 16px; right: 16px;
-    background: var(--brown);
+    top: 20px;
+    right: 20px;
+    background: var(--deep-orange);
     color: white;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    z-index: 3;
+    z-index: 2;
   }
 
   /* ===== TESTIMONI ===== */
-  .testi-section { background: var(--cream); }
-
-  .testi-grid {
+  .testimonials {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 30px;
   }
 
   .testi-card {
     background: white;
-    padding: 30px 26px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px var(--soft-shadow);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(255, 154, 60, 0.1);
     transition: transform 0.3s;
     position: relative;
   }
-  .testi-card:hover { transform: translateY(-6px); }
+
+  .testi-card:hover { transform: translateY(-5px); }
 
   .testi-card::before {
     content: '"';
     position: absolute;
-    top: -8px; left: 22px;
-    font-family: Georgia, serif;
+    top: -10px;
+    left: 20px;
     font-size: 5rem;
-    color: var(--peach);
+    color: var(--warm-yellow);
+    font-family: Georgia, serif;
     line-height: 1;
-    opacity: 0
+    opacity: 0.5;
+  }
+
+  .stars {
+    color: var(--warm-yellow);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+  }
+
+  .testi-card p {
+    color: var(--brown);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testi-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--warm-yellow), var(--orange));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+
+  .testi-user h4 {
+    color: var(--deep-orange);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .testi-user span {
+    color: var(--brown);
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+
+  /* ===== CTA SECTION ===== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--orange), var(--deep-orange));
+    border-radius: 40px;
+    margin: 0 6% 90px;
+    padding: 70px 40px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 217, 61, 0.2);
+    border-radius: 50%;
+  }
+
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section button {
+    padding: 18px 45px;
+    background: white;
+    color: var(--deep-orange);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--choco);
+    color: var(--cream);
+    padding: 60px 6% 30px;
+    text-align: center;
+  }
+
+  footer .logo {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  footer p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--warm-yellow);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+  }
+
+  .social-links a:hover {
+    background: var(--warm-yellow);
+    color: var(--choco);
+    transform: translateY(-5px);
+  }
+
+  .copyright {
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding-top: 110px;
+    }
+
+    .hero-text .tagline { margin-left: auto; margin-right: auto; }
+
+    .hero-buttons { justify-content: center; }
+
+    .hero-stats { justify-content: center; }
+
+    .nav-links { display: none; }
+
+    .hero-image { order: -1; }
+  }
+
+  @media (max-width: 500px) {
+    .hero-stats { gap: 25px; }
+    .stat h3 { font-size: 1.4rem; }
+    .btn-primary, .btn-secondary { padding: 14px 24px; font-size: 0.9rem; }
+    .badge-float { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <div class="logo">🍌 Lumpian<span>Bites</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#keunggulan">Keunggulan</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#testimoni">Testimoni</a></li>
+  </ul>
+  <button class="btn-nav">Order Now 🛒</button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>LUMPIAN <span class="highlight">MINI BITES</span> 🍌</h1>
+    <p class="tagline">
+      Lumpia mini super <strong>renyah</strong> dengan isian pisang & tepung warna-warni, 
+      disajikan dalam toples mini estetik. Cocok buat <strong>snack kekinian</strong> 
+      yang bikin nagih! ✨
+    </p>
+    <div class="hero-buttons">
+      <button class="btn-primary">🛒 Pesan Sekarang</button>
+      <button class="btn-secondary">Lihat Menu</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <h3>10K+</h3>
+        <p>Toples Terjual</p>
+      </div>
+      <div class="stat">
+        <h3>4.9★</h3>
+        <p>Rating Pelanggan</p>
+      </div>
+      <div class="stat">
+        <h3>100%</h3>
+        <p>Crispy & Fresh</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="jar-container">
+      <div class="badge-float badge-1">🔥 Viral!</div>
+      <div class="badge-float badge-2">💛 Best Seller</div>
+      <div class="badge-float badge-3">✨ Fresh</div>
+      
+      <div class="jar">
+        <div class="jar-lid"></div>
+        <div class="lumpia-stack">
+          <div class="lumpia" style="--rot:-12deg"></div>
+          <div class="lumpia" style="--rot:8deg"></div>
+          <div class="lumpia" style="--rot:-5deg"></div>
+          <div class="lumpia" style="--rot:15deg"></div>
+          <div class="lumpia" style="--rot:-8deg"></div>
+          <div class="lumpia" style="--rot:10deg"></div>
+          <div class="lumpia" style="--rot:-15deg"></div>
+          <div class="lumpia" style="--rot:5deg"></div>
+          <div class="lumpia" style="--rot:-10deg"></div>
+          <div class="lumpia" style="--rot:12deg"></div>
+          <div class="lumpia" style="--rot:-3deg"></div>
+          <div class="lumpia" style="--rot:7deg"></div>
+          <div class="lumpia" style="--rot:-14deg"></div>
+          <div class="lumpia" style="--rot:9deg"></div>
+          <div class="lumpia" style="--rot:-6deg"></div>
+        </div>
+      </div>
+      
+      <div class="sauce-bowl">
+        <div class="choco-sauce"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEUNGGULAN ===== -->
+<section id="keunggulan">
+  <div class="section-title">
+    <span class="label">✨ Keunggulan</span>
+    <h2>Kenapa Harus Lumpian Mini Bites?</h2>
+    <p>Bukan sembarang lumpia — setiap gigitan punya cerita manis yang bikin kamu balik lagi!</p>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🥇</div>
+      <h3>Super Crispy</h3>
+      <p>Kulit lumpia golden brown yang digoreng dengan teknik khusus — renyah tahan lama!</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🍌</div>
+      <h3>Isian Spesial</h3>
+      <p>Perpaduan adonan pisang manis & tepung warna-warni yang lembut di dalam.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🫙</div>
+      <h3>Toples Estetik</h3>
+      <p>Dikemas dalam toples mini cute yang Instagramable — cocok buat hadiah!</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🍫</div>
+      <h3>Saus Coklat Glas</h3>
+      <p>Disajikan dengan saus coklat glas premium yang lumer & bikin nagih.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENU ===== -->
+<section class="menu-section" id="menu">
+  <div class="section-title">
+    <span class="label">🛒 Menu Kami</span>
+    <h2>Pilih Varian Favoritmu!</h2>
+    <p>Semua varian dibuat fresh setiap hari dengan bahan-bahan berkualitas</p>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <span class="badge-hot">🔥 Best Seller</span>
+      <div class="menu-visual yellow-bg">
+        <div class="jar-mini">
+          <div class="mini-lumpia"></div>
+          <div class="mini-lumpia"></div>
+          <div class="mini-lumpia"></div>
+          <div class="mini-lumpia"></div>
+          <div class="mini-lumpia"></div>
+          <div class="mini-lumpia"></div>
+        </div>
+      </div>
+      <h3>Lumpian Classic</h3>
+      <p class="desc">Isian pisang manis original dengan kulit lumpia renyah golden brown.</p>
+      <div class="menu-footer">
+        <div class="price">Rp 25K <small>/toples</small></div>
+        <button class="btn-order">+ Pesan</button>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-visual orange-bg">
+        <div class="jar-mini">
+          <div class="mini
