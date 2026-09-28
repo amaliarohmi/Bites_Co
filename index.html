@@ -6,11 +6,7 @@
 <title>Bites.Co — Lumpia Pisang Bites 🍌</title>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
     --beige: #F5E6D3;
@@ -40,13 +36,12 @@
   /* ===== NAVBAR ===== */
   nav {
     position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 16px 6%;
+    top: 0; width: 100%;
+    padding: 14px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 249, 240, 0.85);
+    background: rgba(255, 249, 240, 0.88);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
@@ -60,7 +55,6 @@
     color: var(--brown);
     letter-spacing: 0.5px;
   }
-
   .logo .dot { color: var(--golden); }
 
   .nav-links {
@@ -77,43 +71,38 @@
     transition: color 0.3s;
     position: relative;
   }
-
   .nav-links a:hover { color: var(--golden); }
 
   .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
+    bottom: -5px; left: 0;
+    width: 0; height: 2px;
     background: var(--golden);
     transition: width 0.3s;
     border-radius: 5px;
   }
-
   .nav-links a:hover::after { width: 100%; }
 
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   .icon-btn {
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     border-radius: 50%;
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     color: var(--brown);
     transition: all 0.3s;
     box-shadow: 0 4px 12px var(--soft-shadow);
     border: none;
     cursor: pointer;
+    text-decoration: none;
   }
 
   .icon-btn:hover {
@@ -124,29 +113,24 @@
   }
 
   .icon-btn svg {
-    width: 18px;
-    height: 18px;
+    width: 18px; height: 18px;
     fill: currentColor;
   }
 
-  .icon-btn.wa {
-    background: #25D366;
-    color: white;
-  }
+  .icon-btn.wa { background: #25D366; color: white; }
+  .icon-btn.wa:hover { background: #1da851; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); }
 
-  .icon-btn.wa:hover {
-    background: #1da851;
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-  }
+  .icon-btn.ig { background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCAF45); color: white; }
+  .icon-btn.tt { background: #000; color: white; }
 
   /* ===== HERO ===== */
   .hero {
     position: relative;
     min-height: 100vh;
-    padding: 110px 6% 60px;
-    background: 
-      radial-gradient(ellipse at 80% 20%, rgba(250, 212, 184, 0.6) 0%, transparent 50%),
-      radial-gradient(ellipse at 20% 80%, rgba(245, 230, 211, 0.8) 0%, transparent 50%),
+    padding: 120px 6% 60px;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(250, 212, 184, 0.6) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(245, 230, 211, 0.9) 0%, transparent 55%),
       linear-gradient(180deg, var(--beige) 0%, var(--cream) 100%);
     overflow: hidden;
     display: grid;
@@ -155,87 +139,388 @@
     gap: 40px;
   }
 
-  /* Dekorasi tanaman hijau blur di kiri */
+  /* Tanaman hijau blur di kiri */
   .leaf-blur {
     position: absolute;
-    left: -8%;
-    top: 15%;
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle, var(--green) 0%, var(--green-dark) 60%, transparent 75%);
+    left: -10%; top: 10%;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, var(--green) 0%, var(--green-dark) 60%, transparent 78%);
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.35;
+    filter: blur(85px);
+    opacity: 0.38;
     z-index: 0;
   }
-
   .leaf-blur-2 {
     position: absolute;
-    left: 5%;
-    bottom: 5%;
-    width: 250px;
-    height: 250px;
+    left: 3%; bottom: 3%;
+    width: 280px; height: 280px;
     background: radial-gradient(circle, var(--green) 0%, transparent 70%);
     border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.25;
+    filter: blur(75px);
+    opacity: 0.28;
     z-index: 0;
   }
 
-  /* Bokeh effect */
-  .bokeh {
+  /* Daun dekoratif realistis */
+  .leaf-shape {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    filter: blur(3px);
-    animation: floatBokeh 6s ease-in-out infinite;
+    left: -20px; top: 25%;
+    width: 200px; height: 90px;
+    background: linear-gradient(135deg, var(--green-dark), var(--green));
+    border-radius: 0 100% 0 100%;
+    filter: blur(6px);
+    opacity: 0.55;
+    transform: rotate(-25deg);
+    z-index: 1;
+  }
+  .leaf-shape-2 {
+    position: absolute;
+    left: 40px; top: 55%;
+    width: 160px; height: 70px;
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    border-radius: 100% 0 100% 0;
+    filter: blur(8px);
+    opacity: 0.4;
+    transform: rotate(15deg);
+    z-index: 1;
   }
 
-  .bokeh-1 { top: 20%; left: 30%; animation-delay: 0s; }
-  .bokeh-2 { top: 60%; left: 15%; animation-delay: 1.5s; width: 5px; height: 5px; }
-  .bokeh-3 { top: 35%; left: 45%; animation-delay: 3s; width: 10px; height: 10px; }
-  .bokeh-4 { top: 75%; left: 40%; animation-delay: 2s; }
-  .bokeh-5 { top: 15%; left: 55%; animation-delay: 4s; width: 6px; height: 6px; }
+  /* Bokeh */
+  .bokeh {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    filter: blur(4px);
+    animation: floatBokeh 6s ease-in-out infinite;
+  }
+  .bokeh-1 { top: 18%; left: 30%; width: 10px; height: 10px; }
+  .bokeh-2 { top: 62%; left: 12%; width: 6px; height: 6px; animation-delay: 1.5s; }
+  .bokeh-3 { top: 38%; left: 48%; width: 14px; height: 14px; animation-delay: 3s; }
+  .bokeh-4 { top: 78%; left: 42%; width: 8px; height: 8px; animation-delay: 2s; }
+  .bokeh-5 { top: 12%; left: 58%; width: 7px; height: 7px; animation-delay: 4s; }
+  .bokeh-6 { top: 50%; left: 25%; width: 12px; height: 12px; animation-delay: 0.5s; }
 
   @keyframes floatBokeh {
     0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
-    50% { transform: translateY(-30px) scale(1.3); opacity: 0.8; }
+    50% { transform: translateY(-25px) scale(1.25); opacity: 0.85; }
+  }
+
+  /* ===== HERO VISUAL (FOTO PRODUK REALISTIS) ===== */
+  .hero-visual {
+    position: relative;
+    z-index: 2;
+    height: 640px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Tulisan handwritten "Bites.Co" di atas tengah */
+  .handwritten-brand {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1;
+    text-shadow:
+      0 2px 4px rgba(107, 66, 38, 0.4),
+      0 4px 12px rgba(62, 36, 17, 0.35),
+      0 0 30px rgba(255, 255, 255, 0.4);
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+    letter-spacing: 1px;
+  }
+
+  .handwritten-brand .dot-co {
+    color: #FFFFFF;
+    font-size: 1.05em;
+  }
+
+  /* Foto produk utama */
+  .photo-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1400px;
+  }
+
+  /* ===== CUP PRODUK FOREGROUND (kiri bawah) ===== */
+  .product-cup {
+    position: absolute;
+    bottom: 8%;
+    left: 2%;
+    width: 240px;
+    transform: rotate(-8deg);
+    z-index: 4;
+    animation: floatCup1 5.5s ease-in-out infinite;
+    filter: drop-shadow(0 30px 40px rgba(107, 66, 38, 0.4));
+  }
+
+  /* ===== CUP PRODUK BACKGROUND (kanan atas) ===== */
+  .product-cup-2 {
+    position: absolute;
+    top: 12%;
+    right: 2%;
+    width: 210px;
+    transform: rotate(7deg);
+    z-index: 3;
+    animation: floatCup2 6.5s ease-in-out infinite;
+    filter: drop-shadow(0 25px 35px rgba(107, 66, 38, 0.35));
+  }
+
+  @keyframes floatCup1 {
+    0%, 100% { transform: rotate(-8deg) translateY(0); }
+    50% { transform: rotate(-6deg) translateY(-14px); }
+  }
+  @keyframes floatCup2 {
+    0%, 100% { transform: rotate(7deg) translateY(0); }
+    50% { transform: rotate(5deg) translateY(-12px); }
+  }
+
+  /* Cup plastik transparan */
+  .plastic-cup {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.45) 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      rgba(250, 212, 184, 0.3) 100%);
+    border-radius: 12px 12px 20px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+      inset 0 0 35px rgba(255, 255, 255, 0.55),
+      inset -10px 0 22px rgba(255, 255, 255, 0.45),
+      inset 10px 0 22px rgba(250, 212, 184, 0.3),
+      0 18px 35px rgba(107, 66, 38, 0.28);
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+  }
+
+  /* Tutup bening */
+  .plastic-cup::before {
+    content: '';
+    position: absolute;
+    top: -3px; left: 50%;
+    transform: translateX(-50%);
+    width: 105%; height: 24px;
+    background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.65) 100%);
+    border-radius: 10px 10px 6px 6px;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+      inset 0 -3px 6px rgba(0, 0, 0, 0.06),
+      0 5px 12px rgba(107, 66, 38, 0.18);
+    z-index: 5;
+  }
+
+  /* Highlight tutup */
+  .plastic-cup::after {
+    content: '';
+    position: absolute;
+    top: 5px; left: 15%;
+    width: 42%; height: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    filter: blur(2px);
+    z-index: 6;
+  }
+
+  /* Isi cup - lumpia bites */
+  .cup-fill {
+    position: absolute;
+    top: 20px; left: 0;
+    width: 100%; height: calc(100% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 2px;
+    padding: 8px 6px;
+    z-index: 1;
+  }
+
+  /* Lumpia bite - golden brown crispy */
+  .bite {
+    width: 28px;
+    height: 22px;
+    background: linear-gradient(135deg,
+      #F5C663 0%,
+      #E0A545 30%,
+      #C8873A 60%,
+      #A86A28 100%);
+    border-radius: 6px 5px 6px 5px;
+    position: relative;
+    box-shadow:
+      inset -2px -2px 4px rgba(107, 66, 38, 0.55),
+      inset 2px 2px 3px rgba(255, 240, 200, 0.75),
+      0 3px 5px rgba(62, 36, 17, 0.35);
+    transform: rotate(var(--r, 0deg));
+    flex-shrink: 0;
+  }
+
+  /* Tekstur crispy */
+  .bite::before {
+    content: '';
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 22px; height: 1.5px;
+    background: rgba(139, 69, 19, 0.45);
+    border-radius: 3px;
+    box-shadow:
+      0 4px 0 rgba(139, 69, 19, 0.4),
+      0 8px 0 rgba(139, 69, 19, 0.32),
+      0 12px 0 rgba(139, 69, 19, 0.25),
+      2px 16px 0 rgba(139, 69, 19, 0.2);
+    transform: rotate(-4deg);
+  }
+
+  /* Pisang terlihat di dalam */
+  .bite::after {
+    content: '';
+    position: absolute;
+    top: 7px; right: 5px;
+    width: 8px; height: 6px;
+    background: radial-gradient(ellipse,
+      #FAF0B8 0%,
+      #EFD680 50%,
+      #D9B95A 100%);
+    border-radius: 50% 40% 50% 40%;
+    box-shadow: inset -1px -1px 1.5px rgba(139, 69, 19, 0.4);
+  }
+
+  /* Cup saus coklat */
+  .sauce-cup {
+    position: absolute;
+    bottom: -22px;
+    right: -18px;
+    width: 72px;
+    height: 62px;
+    background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(250, 240, 230, 0.88) 100%);
+    border-radius: 10px 10px 45% 45% / 10px 10px 55% 55%;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    box-shadow:
+      inset 0 -6px 15px rgba(0, 0, 0, 0.06),
+      0 10px 20px rgba(107, 66, 38, 0.32);
+    z-index: 7;
+    overflow: hidden;
+    animation: floatCup1 4.5s ease-in-out infinite;
+  }
+
+  /* Saus coklat di dalam cup */
+  .sauce-cup::before {
+    content: '';
+    position: absolute;
+    top: 16px; left: 9px;
+    width: 46px; height: 36px;
+    background: radial-gradient(ellipse at 35% 30%,
+      #7B4A28 0%,
+      #5D3A1A 45%,
+      #3E2411 100%);
+    border-radius: 50%;
+    box-shadow:
+      inset -5px -5px 9px rgba(0, 0, 0, 0.55),
+      inset 5px 5px 9px rgba(139, 90, 43, 0.6);
+  }
+
+  /* Highlight saus */
+  .sauce-cup::after {
+    content: '';
+    position: absolute;
+    top: 22px; left: 17px;
+    width: 14px; height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    filter: blur(2px);
+    z-index: 2;
+  }
+
+  /* ===== TANGAN MEMEGANG CUP ===== */
+  .hand {
+    position: absolute;
+    width: 100px;
+    height: 130px;
+    background: linear-gradient(135deg,
+      #EBC0A0 0%,
+      #D9A87F 45%,
+      #C69068 100%);
+    border-radius: 45% 45% 35% 35% / 50% 50% 42% 42%;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow:
+      inset -6px -6px 16px rgba(139, 90, 60, 0.35),
+      inset 6px 6px 16px rgba(255, 225, 195, 0.55),
+      0 12px 24px rgba(107, 66, 38, 0.22);
+  }
+
+  /* Ruas jari */
+  .hand::before {
+    content: '';
+    position: absolute;
+    top: -16px; left: 18px;
+    width: 34px; height: 44px;
+    background: linear-gradient(135deg, #EBC0A0, #D9A87F);
+    border-radius: 50% 50% 32% 32%;
+    box-shadow: inset -3px -3px 6px rgba(139, 90, 60, 0.32);
+  }
+
+  /* Jempol */
+  .hand::after {
+    content: '';
+    position: absolute;
+    top: 8px; right: 4px;
+    width: 38px; height: 60px;
+    background: linear-gradient(135deg, #EBC0A0, #D9A87F);
+    border-radius: 45% 45% 50% 50%;
+    transform: rotate(-22deg);
+    box-shadow:
+      inset -4px -4px 9px rgba(139, 90, 60, 0.38),
+      inset 4px 4px 7px rgba(255, 225, 195, 0.55);
+  }
+
+  /* Kuku */
+  .nail {
+    position: absolute;
+    top: -10px; right: 10px;
+    width: 15px; height: 11px;
+    background: linear-gradient(135deg, #FAE7D8, #EFC8A8);
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.9);
+    z-index: 3;
+  }
+
+  /* Bayangan tangan */
+  .hand-shadow {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 30px;
+    background: radial-gradient(ellipse, rgba(107, 66, 38, 0.4) 0%, transparent 72%);
+    filter: blur(10px);
+    z-index: 0;
   }
 
   /* ===== HERO TEXT ===== */
   .hero-text {
     position: relative;
-    z-index: 2;
-    max-width: 560px;
-  }
-
-  .handwritten-title {
-    position: absolute;
-    top: -230px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-family: 'Caveat', cursive;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 700;
-    color: white;
-    line-height: 1;
-    text-shadow: 
-      2px 2px 8px rgba(62, 36, 17, 0.35),
-      0 0 20px rgba(255, 255, 255, 0.3);
     z-index: 5;
-    pointer-events: none;
-    white-space: nowrap;
-    letter-spacing: 2px;
-  }
-
-  .handwritten-title .line-2 {
-    display: block;
-    font-size: 1.15em;
-    margin-top: -10px;
-    transform: rotate(-2deg);
+    max-width: 560px;
+    padding-right: 20px;
   }
 
   .hero-badge {
@@ -253,8 +538,7 @@
   }
 
   .hero-badge .dot-live {
-    width: 8px;
-    height: 8px;
+    width: 8px; height: 8px;
     background: #25D366;
     border-radius: 50%;
     animation: pulse 1.5s ease-in-out infinite;
@@ -266,7 +550,7 @@
   }
 
   .hero-text h1 {
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
     font-weight: 800;
     line-height: 1.15;
     color: var(--deep-brown);
@@ -278,10 +562,11 @@
     color: var(--golden);
     font-family: 'Caveat', cursive;
     font-weight: 700;
+    font-size: 1.15em;
   }
 
   .hero-text p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--brown);
     margin-bottom: 30px;
     max-width: 480px;
@@ -319,11 +604,7 @@
     box-shadow: 0 15px 35px rgba(107, 66, 38, 0.4);
   }
 
-  .btn-primary svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-  }
+  .btn-primary svg { width: 18px; height: 18px; fill: currentColor; }
 
   .btn-secondary {
     display: inline-flex;
@@ -342,10 +623,7 @@
     text-decoration: none;
   }
 
-  .btn-secondary:hover {
-    background: var(--peach);
-    transform: translateY(-4px);
-  }
+  .btn-secondary:hover { background: var(--peach); transform: translateY(-4px); }
 
   .hero-trust {
     display: flex;
@@ -355,320 +633,23 @@
   }
 
   .trust-item h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--brown);
     line-height: 1;
   }
-
   .trust-item h3 span { color: var(--golden); }
 
   .trust-item p {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--brown);
     opacity: 0.7;
     margin-top: 5px;
     margin-bottom: 0;
   }
 
-  /* ===== HERO VISUAL - Realistic Product Photo ===== */
-  .hero-visual {
-    position: relative;
-    z-index: 2;
-    height: 620px;
-    perspective: 1200px;
-  }
-
-  .product-shot {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Cup produk - foreground kiri bawah */
-  .cup-foreground {
-    position: absolute;
-    bottom: 8%;
-    left: 0%;
-    width: 220px;
-    transform: rotate(-8deg);
-    z-index: 3;
-    animation: floatCup1 5s ease-in-out infinite;
-    filter: drop-shadow(0 25px 35px rgba(107, 66, 38, 0.35));
-  }
-
-  /* Cup produk - tengah/kanan atas */
-  .cup-background {
-    position: absolute;
-    top: 5%;
-    right: 0%;
-    width: 200px;
-    transform: rotate(6deg);
-    z-index: 2;
-    animation: floatCup2 6s ease-in-out infinite;
-    filter: drop-shadow(0 25px 35px rgba(107, 66, 38, 0.3));
-  }
-
-  @keyframes floatCup1 {
-    0%, 100% { transform: rotate(-8deg) translateY(0); }
-    50% { transform: rotate(-6deg) translateY(-12px); }
-  }
-
-  @keyframes floatCup2 {
-    0%, 100% { transform: rotate(6deg) translateY(0); }
-    50% { transform: rotate(4deg) translateY(-10px); }
-  }
-
-  /* Cup plastik transparan */
-  .plastic-cup {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1.1;
-    background: linear-gradient(180deg, 
-      rgba(255, 255, 255, 0.5) 0%, 
-      rgba(255, 255, 255, 0.25) 40%,
-      rgba(250, 212, 184, 0.35) 100%);
-    border-radius: 12px 12px 18px 18px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 
-      inset 0 0 30px rgba(255, 255, 255, 0.5),
-      inset -8px 0 20px rgba(255, 255, 255, 0.4),
-      0 15px 30px rgba(107, 66, 38, 0.25);
-    overflow: hidden;
-    backdrop-filter: blur(2px);
-  }
-
-  /* Tutup bening */
-  .plastic-cup::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 104%;
-    height: 22px;
-    background: linear-gradient(180deg, 
-      rgba(255, 255, 255, 0.9) 0%, 
-      rgba(255, 255, 255, 0.6) 100%);
-    border-radius: 10px 10px 6px 6px;
-    border: 2px solid rgba(255, 255, 255, 0.95);
-    box-shadow: 
-      inset 0 -3px 6px rgba(0,0,0,0.05),
-      0 4px 10px rgba(107, 66, 38, 0.15);
-    z-index: 3;
-  }
-
-  /* Highlight pada tutup */
-  .plastic-cup::after {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 15%;
-    width: 40%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    filter: blur(2px);
-    z-index: 4;
-  }
-
-  /* Isi cup - lumpia bites */
-  .cup-fill {
-    position: absolute;
-    top: 18px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 18px);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 2px;
-    padding: 8px 6px;
-    z-index: 1;
-  }
-
-  /* Lumpia bites mini - golden brown */
-  .bite {
-    width: 26px;
-    height: 20px;
-    background: linear-gradient(135deg, 
-      #F0B94E 0%, 
-      #D89B4A 40%, 
-      #B87830 100%);
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 
-      inset -2px -2px 4px rgba(107, 66, 38, 0.5),
-      inset 2px 2px 3px rgba(255, 240, 200, 0.7),
-      0 2px 4px rgba(62, 36, 17, 0.3);
-    transform: rotate(var(--r, 0deg));
-    flex-shrink: 0;
-  }
-
-  /* Tekstur crispy - garis-garis */
-  .bite::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 2px;
-    width: 20px;
-    height: 1.5px;
-    background: rgba(139, 69, 19, 0.4);
-    border-radius: 3px;
-    box-shadow: 
-      0 4px 0 rgba(139, 69, 19, 0.35),
-      0 8px 0 rgba(139, 69, 19, 0.3),
-      2px 12px 0 rgba(139, 69, 19, 0.25);
-    transform: rotate(-5deg);
-  }
-
-  /* Pisang terlihat di dalam */
-  .bite::after {
-    content: '';
-    position: absolute;
-    top: 6px;
-    right: 4px;
-    width: 7px;
-    height: 5px;
-    background: radial-gradient(ellipse, #F5E6A8 0%, #E8C97A 100%);
-    border-radius: 50% 40% 50% 40%;
-    box-shadow: inset -1px -1px 1px rgba(139, 69, 19, 0.3);
-  }
-
-  /* Cup saus coklat kecil */
-  .sauce-cup {
-    position: absolute;
-    bottom: -18px;
-    right: -20px;
-    width: 65px;
-    height: 55px;
-    background: linear-gradient(180deg, 
-      rgba(255, 255, 255, 0.9) 0%, 
-      rgba(250, 240, 230, 0.85) 100%);
-    border-radius: 8px 8px 40% 40% / 8px 8px 50% 50%;
-    border: 2px solid rgba(255, 255, 255, 0.95);
-    box-shadow: 
-      inset 0 -5px 15px rgba(0,0,0,0.05),
-      0 8px 18px rgba(107, 66, 38, 0.3);
-    z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 5px;
-    overflow: hidden;
-  }
-
-  .sauce-cup::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: 8px;
-    width: 40px;
-    height: 32px;
-    background: radial-gradient(ellipse at 35% 30%, 
-      #6B4226 0%, 
-      #4A2C17 50%, 
-      #2E1A0E 100%);
-    border-radius: 50%;
-    box-shadow: 
-      inset -4px -4px 8px rgba(0,0,0,0.5),
-      inset 4px 4px 8px rgba(139, 90, 43, 0.6);
-  }
-
-  /* Highlight coklat */
-  .sauce-cup::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 15px;
-    width: 12px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 50%;
-    filter: blur(2px);
-    z-index: 2;
-  }
-
-  /* Tangan memegang cup (realistis) */
-  .hand {
-    position: absolute;
-    width: 90px;
-    height: 120px;
-    background: linear-gradient(135deg, 
-      #E8B896 0%, 
-      #D4A17A 50%, 
-      #C08E68 100%);
-    border-radius: 45% 45% 35% 35% / 50% 50% 40% 40%;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 0;
-    box-shadow: 
-      inset -5px -5px 15px rgba(139, 90, 60, 0.3),
-      inset 5px 5px 15px rgba(255, 220, 190, 0.5),
-      0 10px 20px rgba(107, 66, 38, 0.2);
-  }
-
-  .hand::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 15px;
-    width: 30px;
-    height: 40px;
-    background: linear-gradient(135deg, #E8B896, #D4A17A);
-    border-radius: 50% 50% 30% 30%;
-    box-shadow: inset -2px -2px 5px rgba(139, 90, 60, 0.3);
-  }
-
-  /* Jempol */
-  .hand::after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    width: 35px;
-    height: 55px;
-    background: linear-gradient(135deg, #E8B896, #D4A17A);
-    border-radius: 45% 45% 50% 50%;
-    transform: rotate(-20deg);
-    box-shadow: 
-      inset -3px -3px 8px rgba(139, 90, 60, 0.35),
-      inset 3px 3px 6px rgba(255, 220, 190, 0.5);
-  }
-
-  /* Detail kuku */
-  .nail {
-    position: absolute;
-    top: -8px;
-    right: 8px;
-    width: 14px;
-    height: 10px;
-    background: linear-gradient(135deg, #F5E0D0, #E8C5A8);
-    border-radius: 50%;
-    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.8);
-    z-index: 1;
-  }
-
-  /* Bayangan tangan */
-  .hand-shadow {
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 130px;
-    height: 25px;
-    background: radial-gradient(ellipse, rgba(107, 66, 38, 0.35) 0%, transparent 70%);
-    filter: blur(8px);
-    z-index: -1;
-  }
-
-  /* ===== SECTION STYLING ===== */
-  section {
-    padding: 90px 6%;
-    position: relative;
-  }
+  /* ===== SECTION ===== */
+  section { padding: 90px 6%; position: relative; }
 
   .section-header {
     text-align: center;
@@ -692,7 +673,7 @@
   }
 
   .section-header h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     color: var(--deep-brown);
     font-weight: 800;
     line-height: 1.2;
@@ -704,11 +685,12 @@
     font-family: 'Caveat', cursive;
     color: var(--golden);
     font-weight: 700;
+    font-size: 1.2em;
   }
 
   .section-header p {
     color: var(--brown);
-    opacity: 0.8;
+    opacity: 0.82;
     font-size: 1rem;
   }
 
@@ -738,8 +720,7 @@
   }
 
   .feature-icon {
-    width: 70px;
-    height: 70px;
+    width: 70px; height: 70px;
     margin: 0 auto 20px;
     background: linear-gradient(135deg, var(--peach), var(--golden-light));
     border-radius: 20px;
@@ -770,9 +751,7 @@
   }
 
   /* ===== MENU ===== */
-  .menu-section {
-    background: linear-gradient(180deg, var(--cream), var(--beige));
-  }
+  .menu-section { background: linear-gradient(180deg, var(--cream), var(--beige)); }
 
   .menu-grid {
     display: grid;
@@ -811,15 +790,14 @@
   }
 
   .mini-cup {
-    width: 80px;
-    height: 95px;
-    background: linear-gradient(180deg, 
-      rgba(255, 255, 255, 0.6) 0%, 
+    width: 80px; height: 95px;
+    background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.6) 0%,
       rgba(255, 255, 255, 0.3) 100%);
     border: 2px solid rgba(255, 255, 255, 0.9);
     border-radius: 8px 8px 12px 12px;
     position: relative;
-    box-shadow: 
+    box-shadow:
       inset 0 0 15px rgba(255, 255, 255, 0.6),
       0 10px 20px rgba(107, 66, 38, 0.2);
     display: flex;
@@ -834,10 +812,8 @@
   .mini-cup::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2%;
-    width: 104%;
-    height: 12px;
+    top: -2px; left: -2%;
+    width: 104%; height: 12px;
     background: rgba(255, 255, 255, 0.85);
     border-radius: 6px 6px 3px 3px;
     border: 1.5px solid rgba(255, 255, 255, 0.95);
@@ -845,8 +821,7 @@
   }
 
   .mini-bite {
-    width: 16px;
-    height: 12px;
+    width: 16px; height: 12px;
     background: linear-gradient(135deg, #F0B94E, #B87830);
     border-radius: 3px;
     box-shadow: inset -1px -1px 2px rgba(107, 66, 38, 0.4);
@@ -856,10 +831,8 @@
   .mini-bite::after {
     content: '';
     position: absolute;
-    top: 3px;
-    right: 2px;
-    width: 4px;
-    height: 3px;
+    top: 3px; right: 2px;
+    width: 4px; height: 3px;
     background: #F5E6A8;
     border-radius: 50%;
   }
@@ -893,7 +866,6 @@
     font-weight: 800;
     color: var(--brown);
   }
-
   .price small {
     font-size: 0.7rem;
     font-weight: 500;
@@ -913,16 +885,11 @@
     cursor: pointer;
     transition: all 0.3s;
   }
-
-  .btn-order:hover {
-    background: var(--golden);
-    transform: scale(1.05);
-  }
+  .btn-order:hover { background: var(--golden); transform: scale(1.05); }
 
   .badge-hot {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 16px; right: 16px;
     background: var(--brown);
     color: white;
     padding: 5px 12px;
@@ -932,94 +899,33 @@
     z-index: 3;
   }
 
-  /* ===== CTA ===== */
-  .cta-section {
-    background: linear-gradient(135deg, var(--peach) 0%, var(--golden) 100%);
-    border-radius: 40px;
-    margin: 0 6% 90px;
-    padding: 70px 40px;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 25px 60px rgba(216, 155, 74, 0.3);
+  /* ===== TESTIMONI ===== */
+  .testi-section { background: var(--cream); }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .cta-section::before {
-    content: '';
+  .testi-card {
+    background: white;
+    padding: 30px 26px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px var(--soft-shadow);
+    transition: transform 0.3s;
+    position: relative;
+  }
+  .testi-card:hover { transform: translateY(-6px); }
+
+  .testi-card::before {
+    content: '"';
     position: absolute;
-    top: -30%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 50%;
-  }
-
-  .cta-section::after {
-    content: '';
-    position: absolute;
-    bottom: -40%;
-    left: -5%;
-    width: 350px;
-    height: 350px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-  }
-
-  .cta-section h2 {
-    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-    font-weight: 800;
-    margin-bottom: 12px;
-    position: relative;
-    z-index: 1;
-    line-height: 1.2;
-  }
-
-  .cta-section h2 .hand-accent {
-    font-family: 'Caveat', cursive;
-    font-size: 1.15em;
-  }
-
-  .cta-section p {
-    font-size: 1rem;
-    opacity: 0.95;
-    margin-bottom: 28px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cta-section button {
-    padding: 16px 42px;
-    background: var(--brown);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 12px 30px rgba(62, 36, 17, 0.35);
-    position: relative;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .cta-section button:hover {
-    transform: translateY(-5px) scale(1.03);
-    background: var(--deep-brown);
-    box-shadow: 0 20px 45px rgba(62, 36, 17, 0.45);
-  }
-
-  .cta-section button svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-  }
-
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--deep-brown);
+    top: -8px; left: 22px;
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    color: var(--peach);
+    line-height: 1;
+    opacity: 0
